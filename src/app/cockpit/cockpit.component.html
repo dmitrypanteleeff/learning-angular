@@ -3,15 +3,28 @@
       <p>Add new Servers or blueprints!</p>
       <label>Server Name</label>
       <!-- <input type="text" class="form-control" [(ngModel)]="newName"> -->
-      <input type="text" class="form-control" #newName>
+      <input type="text" 
+             class="form-control" 
+             #newName>
+      <div>{{newName.value}}</div>
+      <div>{{newContent}}</div>
       <label>Server Content</label>
       <input type="text" class="form-control" [(ngModel)]="newContent">
       <br>
       <button
         class="btn btn-primary"
         (click)="onAddServer(newName)">Add Server</button>
+      <!-- 
       <button
         class="btn btn-primary"
-        (click)="onAddBlueprint()">Add Server Blueprint</button>
+        (click)="onAddBlueprint()">
+          Add Server Blueprint
+      </button> 
+      -->
+      <button
+        class="btn btn-primary"
+        (click)="onAddBlueprint(newName)">
+          Add Server Blueprint
+      </button> 
     </div>
   </div>
