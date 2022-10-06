@@ -9,7 +9,10 @@
       <div>{{newName.value}}</div>
       <div>{{newContent}}</div>
       <label>Server Content</label>
-      <input type="text" class="form-control" [(ngModel)]="newContent">
+      <!-- <input type="text" class="form-control" [(ngModel)]="newContent"> -->
+      <input type="text" 
+             class="form-control" 
+             #serverContentInput>
       <br>
       <button
         class="btn btn-primary"
