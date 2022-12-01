@@ -1,4 +1,11 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  ViewEncapsulation,
+  ViewChild,
+  ElementRef
+} from '@angular/core';
 
 @Component({
   selector: 'app-server-element',
@@ -7,6 +14,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class ServerElementComponent implements OnInit {
+  @ViewChild('heading') header: ElementRef;
   // @Input() element: {
   //   type: string,
   //   name: string,
@@ -20,6 +28,11 @@ export class ServerElementComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  ngAfterViewInit(): void {
+    console.log('Text content',this.header.nativeElement.textContent)
   }
 
 }
