@@ -4,7 +4,8 @@ import {
   OnInit,
   ViewEncapsulation,
   ViewChild,
-  ElementRef
+  ElementRef,
+  ContentChild
 } from '@angular/core';
 
 @Component({
@@ -15,6 +16,7 @@ import {
 })
 export class ServerElementComponent implements OnInit {
   @ViewChild('heading') header: ElementRef;
+  @ContentChild('contentParagraph') paragraph: ElementRef;
   // @Input() element: {
   //   type: string,
   //   name: string,
@@ -33,6 +35,10 @@ export class ServerElementComponent implements OnInit {
 
   ngAfterViewInit(): void {
     console.log('Text content',this.header.nativeElement.textContent)
+  }
+
+  ngAfterContentInit(): void {
+    console.log('Text content of paragraph', this.paragraph.nativeElement.textContent)
   }
 
 }
